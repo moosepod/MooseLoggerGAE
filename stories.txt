@@ -1,0 +1,16 @@
+As a user, I'd like to be able to log in
+As a user, I'd like to be able to log normal contacts
+As a user, I'd like to be able to log contacts for the NY QSO party
+As a user, I'd like QRZ lookup on entered callsigns
+As a user, I'd like autocomplete while I enter callsigns
+As a user, I'd like to be able to pre-fill some fields while listening
+As a user, I'd like to see how I'm progressing towards WAS
+As a user, I'd like to see how I'm progressing towards WAC
+As a user, I'd like to see how I'm progressing towards DXCC
+As a user, I'd like to see my contacts on a US map
+As a user, I'd like to see my contacts on a world map
+As a user, I'd like to have sequential contact numbers handled in a contest
+As a user, I'd like multipliers to be handled in a contest
+As a user, I'd like to be able to enter log entries in the future
+As a user, I'd like to be able to edit log entries
+As a user, I'd like whether I sent QSL cards already
