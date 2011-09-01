@@ -4,15 +4,19 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 
 def get_template_path(template_name):
-    return os.path.join(os.path.dirname(__file__),'templates',template_name)
+    return os.path.join(os.path.dirname(__file__),'templates',template_name)        
 
-class ContestLogList(webapp.RequestHandler):
+class ContestLogListView(webapp.RequestHandler):
+    def template_values_for_get(self):
+        return {}
+
     def get(self):
-        template_values = {}
-        self.response.out.write(template.render(get_template_path('contest_log_list.html'), template_values))
+        template_values = self.template_values_for_get()
+        self.response.out.write(template.render(get_template_path('contest_log_list.html'), 
+                                                template_values))
 
 application = webapp.WSGIApplication(
-                                     [('/', ContestLogList)],
+                                     [('/', ContestLogListView)],
                                      debug=True)
 
 def main():

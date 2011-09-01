@@ -1,10 +1,31 @@
 import unittest
+import StringIO
+
 from google.appengine.ext import db
 from google.appengine.api import users
 from google.appengine.datastore import datastore_stub_util
 from google.appengine.ext import testbed
 
 from models import Ruleset, ContactLog
+from mooselogger import ContestLogListView
+
+class ViewTests(unittest.TestCase):
+    class MockResponse(object):
+        def __init__(self):
+            self.out = StringIO.StringIO()
+
+        def __unicode__(self):
+            return self.out.getvalue()
+
+    def test_contact_log_list(self):
+        view = ContestLogListView()
+        view.response=ViewTests.MockResponse()
+
+        self.assertEquals({}, view.template_values_for_get())
+        self.assertEquals(u'', unicode(view.response))
+        view.get()  
+        self.assertTrue('<h1>Your Logs</h1>' in  unicode(view.response))
+
 
 class ModelSanityTests(unittest.TestCase):
 
