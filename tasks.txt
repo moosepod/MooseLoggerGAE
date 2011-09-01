@@ -1,0 +1,7 @@
+- Don't make direct appengine calls, go through intermediate to assist with future porting
+- Engineering: callsign-indexed list of all contacts
+- Engineering: handle downtime gracefully (overload page, scheduled downtime page)
+- Yagni: us/ca only
+- Yagni: start with non-json interface
+- Yagni: QSO party only
+- Yagni: don't worry about other users

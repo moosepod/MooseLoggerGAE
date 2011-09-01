@@ -2,6 +2,7 @@ As a user, I'd like to be able to log in
 As a user, I'd like to be able to log normal contacts
 As a user, I'd like to be able to log contacts for the NY QSO party
 As a user, I'd like QRZ lookup on entered callsigns
+As a user, I'd like to use the FCC db lookup on entered callsigns
 As a user, I'd like autocomplete while I enter callsigns
 As a user, I'd like to be able to pre-fill some fields while listening
 As a user, I'd like to see how I'm progressing towards WAS
@@ -14,3 +15,22 @@ As a user, I'd like multipliers to be handled in a contest
 As a user, I'd like to be able to enter log entries in the future
 As a user, I'd like to be able to edit log entries
 As a user, I'd like whether I sent QSL cards already
+As a user, I'd like to export a log to cabrillo format
+As a user, I'd like to see my contacts by month/year
+As a user, I'd like to see my contacts by contest
+As a user, I'd like to be able to search my contacts by callsign
+As a user, I'd like duplicate contacts to be flagged (in contest mode)
+As a sysadmin, I'd like to be able to merge contacts from another running instance of the software
+As a user, I'd like a nice UI
+As a user, I'd like to be able to configure my profile
+As a user, I don't want page to reload on each log submission
+As a user, I'd like a date widget for log entry
+As a user, I'd like band inferred from frequency
+As a user, I'd like new rows to default to band/mode of old rows
+As a user, I'd like to be able to set my callsign
+As a user, I'd like to be able to set my gridsquare
+As a user, I'd like my region to default to callsign db
+As a user, I'd like Canadian callsign lookup
+As a user, I'd like to be able to log with keyboard only (tab between fields)
+As a contest user, I'd like rows to default with the next signal exchange
+
