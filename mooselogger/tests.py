@@ -17,15 +17,23 @@ class ViewTests(unittest.TestCase):
         def __unicode__(self):
             return self.out.getvalue()
 
-    def test_contact_log_list(self):
-        view = ContestLogListView()
-        view.response=ViewTests.MockResponse()
+    class MockRequest(object):
+        def __init__(self):
+            self.uri = '/test'
 
-        self.assertEquals({}, view.template_values_for_get())
+    def test_contact_log_list(self):
+        user = users.User(email='foo@bar.com')
+        view = ContestLogListView()
+        view.response = ViewTests.MockResponse()
+        view.request = ViewTests.MockRequest()
+
+        self.assertEquals({'logs': []}, view.template_values_for_get(user))
         self.assertEquals(u'', unicode(view.response))
-        view.get()  
+
+        view.get_secured(user)  
         self.assertTrue('<h1>Your Logs</h1>' in  unicode(view.response))
 
+        view.get()
 
 class ModelSanityTests(unittest.TestCase):
 

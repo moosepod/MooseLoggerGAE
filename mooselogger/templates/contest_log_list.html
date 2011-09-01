@@ -5,5 +5,10 @@
 {% block section_title %}Your Logs{% endblock %}
 
 {% block content %}
-Foo!
+{% if not logs %}<p>You have no contact logs configured.</p>{% else %}
+<ul>
+{% for l in logs %}
+<li>{{ l.name }}</li>
+{% endfor %}
+{% endif %}
 {% endblock %}
