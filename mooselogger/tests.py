@@ -1,0 +1,43 @@
+import unittest
+from google.appengine.ext import db
+from google.appengine.api import users
+from google.appengine.datastore import datastore_stub_util
+from google.appengine.ext import testbed
+
+from models import Ruleset, ContactLog
+
+class ModelSanityTests(unittest.TestCase):
+
+  def setUp(self):
+    # First, create an instance of the Testbed class.
+    self.testbed = testbed.Testbed()
+    # Then activate the testbed, which prepares the service stubs for use.
+    self.testbed.activate()
+	
+    # Create a consistency policy that will simulate the High Replication consistency model.
+    self.policy = datastore_stub_util.PseudoRandomHRConsistencyPolicy(probability=0)
+    # Initialize the datastore stub with this policy.
+    self.testbed.init_datastore_v3_stub(consistency_policy=self.policy)
+
+  def test_ruleset(self):
+    rs = Ruleset(name='Foo Bar')
+    rs.put()
+
+    rs2 = db.get(rs.key())
+    self.assertEquals(rs.name, rs2.name)
+
+  def test_contactlog(self):
+    user = users.User(email='foo@bar.com')
+
+    rs = Ruleset(name='Foo Bar')
+    rs.put()
+
+    cl = ContactLog(name='Quux', ruleset=rs, owner=user)
+    cl.put()
+
+    cl2 = db.get(cl.key())
+    self.assertEquals('Quux', cl.name)
+    self.assertEquals(rs, cl.ruleset)
+    self.assertEquals(user, cl.owner)
+    self.assertTrue(cl.when_created)
+ 
