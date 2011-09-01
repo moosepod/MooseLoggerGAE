@@ -1,0 +1,13 @@
+MooseLogger 0.9 - "TN QSO PARTY"
+- As a user, I'd like to be able to log in
+- As a user, I'd like to be able to log contacts for the TN QSO party
+- As a user, I'd like to use the FCC db lookup on entered callsigns
+- As a user, I'd like to be able to pre-fill some fields while listening
+- As a user, I'd like to have sequential contact numbers handled in a contest
+- As a contest user, I'd like rows to default with the next signal exchange
+- As a user, I'd like band inferred from frequency
+- As a user, I'd like new rows to default to band/mode of old rows
+- As a user, I'd like to be able to log with keyboard only (tab between fields)
+- As a user, I'd like to be able to edit log entries
+- As a user, I'd like an ongoing score based on TN QSO party rules
+
